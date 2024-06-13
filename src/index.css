@@ -1,0 +1,163 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap");
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+ul {
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+ul {
+  display: flex;
+  text-align: center;
+}
+
+li {
+  cursor: pointer;
+  position: relative;
+}
+
+li.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(55, 50, 50);
+  transition: transform 0.3s ease;
+}
+
+li.active:hover::after {
+  transform: scaleX(0);
+}
+
+.Header {
+  background-image: url(/hero.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  margin: 30px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.Header p {
+  font-family: "DM Serif Text", serif;
+  animation: fadein 3s;
+}
+.Header button {
+  font-family: "DM Serif Text", serif;
+}
+.Header h2 {
+  animation: fadein 3s;
+}
+.sign-up {
+  margin-right: 10px;
+  font-family: "DM Serif Text", serif;
+}
+.text {
+  height: 80%;
+  width: 60%;
+  float: right;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.active {
+  border: 2px solid orangered;
+  padding: 3px;
+  border-radius: 50%;
+}
+.food-display-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 10px;
+}
+.food-item {
+  transition: 0.03s;
+  animation: fadein;
+}
+.container{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: backgroun 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 450px) {
+  .logo {
+    height: 2rem;
+  }
+  ul li {
+    font-size: 0.7rem;
+  }
+  .right img {
+    height: 1rem;
+  }
+  .right {
+    margin-right: 5px;
+    margin-left: 7px;
+  }
+  .right button {
+    padding: 2px 5px 2px 5px;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    margin-right: 9px;
+  }
+  .dot {
+    height: 6px;
+    width: 7px;
+  }
+  .Header {
+    height: 20vh;
+  }
+  .Header h2 {
+    font-size: 0.7rem;
+    margin-right: 5px;
+    margin-top: 1px;
+  }
+  .Header p {
+    margin-top: 0%;
+    margin-right: 5px;
+    font-size: 0.5rem;
+  }
+
+  .Header button {
+    margin-top: 27px;
+    margin-right: 30px;
+    font-weight: 100;
+    font-size: 0.7rem;
+    padding: 7px 7px 7px 7px;
+  }
+.container{
+}
+.food-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
